@@ -1,0 +1,35 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lcusb="http://schemas.arction.com/semibindablecharting/ultimate/" x:Class="_3DPointLines_WFP_SB.MainWindow"
+        mc:Ignorable="d"
+        Title="LightningChart Tutorial - Simple 3D PointLines" Height="450" Width="800">
+    <Grid>
+        <lcusb:LightningChartUltimate 
+            Content="LightningChartUltimate" 
+            ActiveView="View3D"
+            x:Name="chart"
+            MouseMove="Chart_MouseMove">
+            <lcusb:LightningChartUltimate.View3D>
+                <lcusb:View3D x:Name="view">
+                    <lcusb:View3D.Camera>
+                        <lcusb:Camera3D 
+                            RotationX="30"
+                            RotationY="-50"/>
+                    </lcusb:View3D.Camera>
+                    <lcusb:View3D.Annotations>
+                        <lcusb:Annotation3D 
+                            x:Name="mouseAnnotation"
+                            Visible="False"
+                            TargetCoordinateSystem="AxisValues"
+                            LocationCoordinateSystem="RelativeCoordinatesToTarget"
+                            MouseInteraction="False">
+                        </lcusb:Annotation3D>
+                    </lcusb:View3D.Annotations>
+                </lcusb:View3D>
+            </lcusb:LightningChartUltimate.View3D>
+        </lcusb:LightningChartUltimate>
+    </Grid>
+</Window>
