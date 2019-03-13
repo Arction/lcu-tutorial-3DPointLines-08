@@ -1,4 +1,4 @@
-# Simple 3D Chart with Mouse Point Tracking and Annotations
+# 3D Chart with Mouse Point Tracking and Annotations
 
 This tutorial explains how to present points and lines in 3D charts using *PointLineSeries3D*, how to create multiple point series and track point values with the mouse. The tracked values are displayed using annotations, which allow displaying labels or graphics anywhere in the chart area.
 
