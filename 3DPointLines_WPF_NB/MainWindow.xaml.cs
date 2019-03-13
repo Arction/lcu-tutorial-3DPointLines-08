@@ -1,5 +1,5 @@
 ﻿// ------------------------------------------------------------------------------------------------------
-// LightningChart® example code: 3D Point Lines with mouse tracking.
+// LightningChart® example code: 3D Chart with Mouse Point Tracking and Annotations Demo.
 //
 // If you need any assistance, or notice error in this example code, please contact support@arction.com. 
 //
@@ -57,7 +57,7 @@ namespace _3DPointLines_WPF_NB
             chart.ActiveView = ActiveView.View3D;
             chart.View3D.ZAxisPrimary3D.SetRange(0, 80);
 
-            // 2. Create 3D Point lines with pre-generated data and different colors to the chart
+            // Create 3D PointLines with pre-generated data and different colors to the chart.
             CreatePointLine(0, Colors.Red);
             CreatePointLine(1, Colors.Orange);
             CreatePointLine(2, Colors.Yellow);
@@ -66,7 +66,7 @@ namespace _3DPointLines_WPF_NB
             CreatePointLine(5, Colors.Indigo);
             CreatePointLine(6, Colors.Violet);
 
-            // 5. Create a new annotation to display target values when hovering over a point with the mouse
+            // 5. Create a new annotation to display target values when hovering over a point with the mouse.
             mouseAnnotation = new Annotation3D(chart.View3D, Axis3DBinding.Primary, Axis3DBinding.Primary, Axis3DBinding.Primary)
             {
                 Visible = false,
@@ -75,16 +75,16 @@ namespace _3DPointLines_WPF_NB
                 MouseInteraction = false
             };
 
-            // Set offset to annotation
+            // Set offset to annotation.
             mouseAnnotation.LocationRelativeOffset.SetValues(40, -70);
 
-            // Add annotation to View3D
+            // Add annotation to View3D.
             chart.View3D.Annotations.Add(mouseAnnotation);
 
-            // 6. Add mouse move event handler to chart to enable tracking points with the mouse
+            // 6. Add mouse move event handler to chart to enable tracking points with the mouse.
             chart.MouseMove += Chart_MouseMove;
 
-            // Set chart's title and default camera rotation
+            // Set chart's title and default camera rotation.
             chart.Title.Text = "3D Point Lines";
             chart.View3D.Camera.RotationX = 30;
             chart.View3D.Camera.RotationY = -50;
@@ -107,7 +107,7 @@ namespace _3DPointLines_WPF_NB
         /// <param name="color">Series' points & line color.</param>
         private void CreatePointLine(int i, Color color)
         {
-            // Create a new PointLineSeries3D for displaying data and set axis bindings to primary axes.
+            // 2. Create a new PointLineSeries3D for displaying data and set axis bindings to primary axes.
             var series = new PointLineSeries3D(chart.View3D, Axis3DBinding.Primary, Axis3DBinding.Primary, Axis3DBinding.Primary)
             {
                 // Set this to true to set a color for individual points.
@@ -139,7 +139,7 @@ namespace _3DPointLines_WPF_NB
             // 4. Create a SeriesPoint3D array for data points.
             SeriesPoint3D[] points = new SeriesPoint3D[10];
 
-            // Generate sample data to the array
+            // Generate sample data to the array.
             for (int j = 0; j < 10; j++)
             {
                 points[j].X = 5 + j * 10;
@@ -186,7 +186,7 @@ namespace _3DPointLines_WPF_NB
                         + "\nPoint index: " + pointIndex.ToString()
                         + "\nX=" + point.X.ToString("0.0") + " ; Y=" + point.Y.ToString("0.0") + " ; Z=" + point.Z.ToString("0.0");
 
-                    // Set the annotation visible while mouse is hovering over the point
+                    // Set the annotation visible while mouse is hovering over the point.
                     mouseAnnotation.Visible = true;
                 }
             }

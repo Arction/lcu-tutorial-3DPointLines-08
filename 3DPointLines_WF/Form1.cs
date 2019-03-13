@@ -1,5 +1,5 @@
 ﻿// ------------------------------------------------------------------------------------------------------
-// LightningChart® example code: 3D Point Lines with mouse tracking.
+// LightningChart® example code: 3D Chart with Mouse Point Tracking and Annotations Demo.
 //
 // If you need any assistance, or notice error in this example code, please contact support@arction.com. 
 //
@@ -13,7 +13,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-//Arction namespaces.
+// Arction namespaces.
 using Arction.WinForms.Charting;             // LightningChartUltimate and general types.
 using Arction.WinForms.Charting.Series3D;    // Series for 3D chart.
 using Arction.WinForms.Charting.Annotations; // Annotations for LightningChart.
@@ -88,16 +88,16 @@ namespace _3DPointLines_WF
             chart.View3D.Camera.RotationX = 30;
             chart.View3D.Camera.RotationY = -50;
 
+            #region Hidden polishing
+            // Customize chart.
+            CustomizeChart(chart);
+            #endregion
+
             // Call EndUpdate to enable rendering again.
             chart.EndUpdate();
 
             // Safe disposal of LC components when the form is closed.
             FormClosed += new FormClosedEventHandler(Form_Closed);
-
-            #region Hidden polishing
-            // Customize chart.
-            CustomizeChart(chart);
-            #endregion
         }
 
         /// <summary>
@@ -194,7 +194,6 @@ namespace _3DPointLines_WF
             // Call EndUpdate to enable rendering again after handling mouse move event.
             chart.EndUpdate();
         }
-
 
         // Safe disposal of LightningChart components when the form is closed.
         private void Form_Closed(Object sender, FormClosedEventArgs e)
