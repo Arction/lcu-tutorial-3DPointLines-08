@@ -2,7 +2,7 @@
 
 This tutorial explains how to present points and lines in 3D charts using *PointLineSeries3D*, how to create multiple point series and track point values with the mouse. The tracked values are displayed using annotations, which allow displaying labels or graphics anywhere in the chart area.
 
-![](./assets/chart-pointlines-3d-winforms-wpf.png)
+![chart with pointline series 3d winforms wpf](./assets/chart-pointlines-3d-winforms-wpf.png)
 
 ##### 1. Define View3D as active view and define Z-axis range.
 ```csharp
